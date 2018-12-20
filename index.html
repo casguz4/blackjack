@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Not Black Jack</title>
+    <link href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+    <link href="style.css" rel="stylesheet">
+    <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+</head>
+<body>
+    <!-- Modal -->
+    <section class="modal fade hidden" id="ace-value-modal" aria-hidden="true">
+        <button id="ace-high">
+            Ace 11
+        </button>
+        <button id="ace-low">
+            Ace 1
+        </button>
+    </section>
+   <section class="row justify-content-between">
+        <main class="col-sm-12 col-lg-8">
+                <section id="section-dealer">
+                    <h2>Dealer</h2>
+                    <label class="hidden" id="dealer-hand">Hand:</label>
+                    <label class="hidden" id="dealer-score"></label>
+                </section>
+                <section id="section-player">
+                    <h2>Player</h2>
+                    <div id="player-hand" class="hidden"></div>
+                    <div class="actions">
+                        <button id="hit">Hit</button>
+                        <button id="stand">Stand</button>
+                        <!--
+                            TODO:
+                            <button id="split">Split</button>
+                        -->
+                    </div>
+                    <label class="hidden" id="player-score"></label>
+                </section>
+           </main>
+           <aside class="col-sm-12 col-lg-3">
+               <button id="new-game">New Game</button>
+               <label id="endgame" class="hidden"></label>
+           </aside>
+   </section>
+   <script src="blackjack.js"></script>
+</body>
+</html>

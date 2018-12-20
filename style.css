@@ -1,0 +1,51 @@
+body{
+    background: #000;
+    padding: 30px 0;
+}
+
+main, aside{
+    margin: 10px 5px;
+    padding: 20px;
+    background: #eee;
+    border-radius: 8px;
+}
+
+.row{
+    max-width: 70vw;
+    margin: 0 auto;
+}
+
+.hidden{
+    display: none !important;
+}
+
+button{
+    width: 100%;
+    max-width: 150px;
+    border: solid #898989;
+    border-width: 0 2px 2px 0;
+    border-radius: 5px;
+    padding:10px 15px;
+    box-shadow:none;
+    color:#505050;
+    font-weight: 600;
+    transition: all .2s ease;
+}
+
+button:hover{
+    background: #898989;
+    color:#fff;
+    border-color: #898989;
+}
+
+.modal{
+    position: fixed;
+    z-index: 100;
+    background: #aeaeae;
+    width: 100vw;
+    height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
+}
