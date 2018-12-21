@@ -1,0 +1,29 @@
+{
+    "name": "npm-blackjack",
+    "version": "1.0.0",
+    "scripts": {
+        "scss": "node-sass --output-style compressed -o \"dist/css\" \"src/scss\"",
+        "autoprefixer": "postcss -u autoprefixer -r \"dist/css/*\"",
+        "lint": "eslint \"src/js\"",
+        "uglify": "mkdir -p \"dist/js\" && uglifyjs \"src/js/*.js\" -m -o \"dist/js/app.js\" && uglifyjs \"src/js/*.js\" -m -c -o \"dist/js/app.min.js\"",
+        "serve": "browser-sync start --server --files \"src/*/*\"",
+        "build:css": "npm run scss && npm run autoprefixer",
+        "build:js": "npm run lint && npm run uglify",
+        "build:all": "npm run build:css",
+        "watch:scss": "onchange \"/src/scss/*.scss\" -- npm run build:css",
+        "watch:js": "onchange \"/src/js/*.js\" -- npm run build:js",
+        "watch:all": "concurrently \"npm run serve\" \"npm run watch:scss\" \"npm run watch:js\"",
+        "postinstall": "npm run watch:all"
+    },
+    "devDependencies": {
+        "autoprefixer": "^9.4.3",
+        "browser-sync": "^2.26.3",
+        "concurrently": "^4.1.0",
+        "eslint": "^5.10.0",
+        "eslint-config-airbnb-base": "^13.1.0",
+        "eslint-plugin-import": "^2.14.0",
+        "node-sass": "^4.11.0",
+        "onchange": "^5.2.0",
+        "postcss-cli": "^6.1.0"
+    }
+}
